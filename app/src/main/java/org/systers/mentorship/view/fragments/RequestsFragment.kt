@@ -83,6 +83,7 @@ class RequestsFragment : BaseFragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.menu_refresh -> {
+                srlRequests.isRefreshing = true
                 fetchNewest()
                 true
             }
@@ -91,7 +92,6 @@ class RequestsFragment : BaseFragment() {
     }
 
     private fun fetchNewest() {
-        srlRequests.isRefreshing = true
         requestsViewModel.getAllMentorshipRelations()
         requestsViewModel.getAllPendingMentorshipRelations()
         requestsViewModel.getPastMentorshipRelations()
