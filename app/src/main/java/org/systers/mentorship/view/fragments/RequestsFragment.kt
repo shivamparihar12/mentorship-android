@@ -95,5 +95,6 @@ class RequestsFragment : BaseFragment() {
         requestsViewModel.getAllMentorshipRelations()
         requestsViewModel.getAllPendingMentorshipRelations()
         requestsViewModel.getPastMentorshipRelations()
+        srlRequests.isRefreshing = false
     }
 }
